@@ -3,12 +3,17 @@ package service;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CyclicBarrier;
 
 public class DecreasingGapService implements IGapService {
     private int threadId = 0;
     private GapServiceType type = GapServiceType.decreasing;
 
     private List<BigInteger> primes = new ArrayList<>();
+
+    public DecreasingGapService(CyclicBarrier cyclicBarrier) {
+
+    }
 
     /**
      * When an object implementing interface <code>Runnable</code> is used
