@@ -5,13 +5,11 @@ import model.PrimeGapChain;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
-import static prime.PrimeStorage.storage;
-
-public class IncreasingGapService implements IGapService {
+public class IncreasingGapService extends AbstractGapService implements IGapService {
     private static int idCounter = 0;
 
     private int threadId = 0;
-    private GapServiceType type = GapServiceType.increasing;
+    private GapServiceType serviceType = GapServiceType.increasing;
     private int lowerIndex = 0;
     private int upperIndex = 0;
 
@@ -23,31 +21,16 @@ public class IncreasingGapService implements IGapService {
         this.lowerIndex = fromIndex;
         this.upperIndex = toIndex;
         idCounter++;
+
+        super.setServiceProvider(this);
     }
 
     public void locatePrimeGaps(int lowerIndex, int upperIndex) {
-        PrimeGapChain bestMatch = new PrimeGapChain();
-        PrimeGapChain currentMatch = new PrimeGapChain();
+        super.locatePrimeGaps(lowerIndex, upperIndex);
+    }
 
-        long lowerPrime = storage.get(lowerIndex);
-        for (long upperPrime : storage.subset(lowerIndex + 1, upperIndex)) {
-
-            long gap = upperPrime - lowerPrime;
-            if (currentMatch.lastGapSmallerThan(gap)) {
-                currentMatch.add(lowerPrime, gap, upperPrime);
-            } else {
-                currentMatch = new PrimeGapChain();
-            }
-
-            if (currentMatch.isLongerThan(bestMatch)) {
-                bestMatch = currentMatch;
-            }
-
-            lowerPrime = upperPrime;
-        }
-
-        System.out.println("Gaps Thread " + threadId + ": " + bestMatch.elements());
-        System.out.println("ConP Thread " + threadId + ": " + bestMatch.getConsecutivePrimes());
+    public boolean isNewChainMember(PrimeGapChain chain, long gap) {
+        return chain.lastGapSmallerThan(gap);
     }
 
     /**
@@ -70,6 +53,18 @@ public class IncreasingGapService implements IGapService {
             exception.printStackTrace();
         }
 
+    }
+
+    public int getLowerIndex() {
+        return lowerIndex;
+    }
+
+    public int getUpperIndex() {
+        return upperIndex;
+    }
+
+    public GapServiceType getServiceType() {
+        return serviceType;
     }
 
     @Override

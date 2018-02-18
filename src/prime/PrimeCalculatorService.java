@@ -70,7 +70,9 @@ public class PrimeCalculatorService implements Runnable {
      * @see Thread#run()
      */
     public void run() {
+        long start = System.currentTimeMillis();
         PrimeStorage.storage.addAll(calculatePrimes(minimum, maximum));
+        System.out.println("Runtime (ms) (Thread " + threadId + "): " + (System.currentTimeMillis() - start));
 
         try {
             cyclicBarrier.await();

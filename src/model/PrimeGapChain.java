@@ -47,7 +47,7 @@ public class PrimeGapChain {
         return this.length() == bestMatch.length();
     }
 
-    public boolean isLongerThan(Object otherChain) {
+    public boolean isLongerThan(PrimeGapChain otherChain) {
         return this.length() > otherChain.length();
     }
 

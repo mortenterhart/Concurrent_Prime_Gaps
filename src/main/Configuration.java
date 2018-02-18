@@ -3,6 +3,6 @@ package main;
 public enum Configuration {
     instance;
 
-    int maximumNumberOfThreads = Runtime.getRuntime().availableProcessors();
-    long searchMaximum = 10_000_000L;
+    public int maximumNumberOfThreads = Runtime.getRuntime().availableProcessors();
+    public long searchMaximum = 100_000_000;
 }

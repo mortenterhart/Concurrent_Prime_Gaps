@@ -3,7 +3,7 @@ package main;
 import prime.PrimeCalculatorService;
 import service.DecreasingGapService;
 import service.DistinctGapService;
-import service.IncreasingGapService;
+import service.IncreasingGapService;;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +21,8 @@ public class Application {
     public void execute() {
         List<Thread> serviceThreads = new ArrayList<>();
 
-        long partition = (Configuration.instance.searchMaximum - 2) / Configuration.instance.maximumNumberOfThreads;
-        long startPrime = 2;
+        long startPrime = 3;
+        long partition = (Configuration.instance.searchMaximum - startPrime) / Configuration.instance.maximumNumberOfThreads;
         for (int i = 0; i < Configuration.instance.maximumNumberOfThreads; i++) {
             Thread primeThread = new Thread(new PrimeCalculatorService(cyclicBarrier, startPrime,
                     startPrime + partition));
@@ -75,7 +75,7 @@ public class Application {
 
         waitFor(serviceThreads);
         serviceThreads.clear();
-     }
+    }
 
     private void waitFor(List<Thread> threads) {
         try {
