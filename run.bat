@@ -2,7 +2,7 @@
 
 SET JAVA_DIRECT_EXECUTABLE_PATH=false
 
-SET JAVA_VM_OPTIONS=-server -Xms6G -Xmx4G -XX:MaxDirectMemorySize=1024M -XX:NewSize=1G ^
+SET JAVA_VM_OPTIONS=-server -Xms6G -Xmx6G -XX:MaxDirectMemorySize=1024M -XX:NewSize=1G ^
 -XX:MaxNewSize=1G -XX:+UseParNewGC -XX:MaxTenuringThreshold=2 ^
 -XX:SurvivorRatio=8 -XX:+UnlockDiagnosticVMOptions -XX:ParGCCardsPerStrideChunk=32768
 
@@ -17,7 +17,7 @@ IF NOT DEFINED JAVA (
     )
 
     IF "%JAVA%" == "" (
-       ECHO ERROR: Could not locate 'java' executable.
+       ECHO ERROR: Could not locate a 'java' executable.
        ECHO Make sure a Java version is correctly installed and visible inside PATH variable.
        EXIT /B 1
     )

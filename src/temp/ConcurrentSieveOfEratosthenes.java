@@ -1,4 +1,4 @@
-package service;
+package temp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,10 +37,10 @@ public class ConcurrentSieveOfEratosthenes {
 
     private int sieveInRange(long minimumValue, long maximumValue) {
         long size = (maximumValue - minimumValue + 1) / 2;
-        boolean[] isPrime = new boolean[size];
+        boolean[] isPrime = new boolean[(int) size];
 
         for (long i = 0; i < size; i++)
-            isPrime[i] = true;
+            isPrime[(int) i] = true;
 
         for (long i = 3; i * i <= maximumValue; i += 2) {
             if (i >= 9 && i % 3 == 0)

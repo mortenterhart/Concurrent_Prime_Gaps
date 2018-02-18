@@ -1,18 +1,53 @@
 package service;
 
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
+import model.PrimeGapChain;
+
+import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
+import static prime.PrimeStorage.storage;
+
 public class DecreasingGapService implements IGapService {
+    private static int idCounter = 0;
+
     private int threadId = 0;
     private GapServiceType type = GapServiceType.decreasing;
+    private int lowerIndex = 0;
+    private int upperIndex = 0;
 
-    private List<BigInteger> primes = new ArrayList<>();
+    private CyclicBarrier cyclicBarrier;
 
-    public DecreasingGapService(CyclicBarrier cyclicBarrier) {
+    public DecreasingGapService(CyclicBarrier cyclicBarrier, int fromIndex, int toIndex) {
+        this.threadId = idCounter;
+        this.cyclicBarrier = cyclicBarrier;
+        this.lowerIndex = fromIndex;
+        this.upperIndex = toIndex;
+        idCounter++;
+    }
 
+    public void locatePrimeGaps(int lowerIndex, int upperIndex) {
+        PrimeGapChain bestMatch = new PrimeGapChain();
+        PrimeGapChain currentMatch = new PrimeGapChain();
+
+        long lowerPrime = storage.get(lowerIndex);
+        for (long upperPrime : storage.subset(lowerIndex + 1, upperIndex)) {
+
+            long gap = upperPrime - lowerPrime;
+            if (currentMatch.lastGapGreaterThan(gap)) {
+                currentMatch.add(lowerPrime, gap, upperPrime);
+            } else {
+                currentMatch = new PrimeGapChain();
+            }
+
+            if (currentMatch.isLongerThan(bestMatch)) {
+                bestMatch = currentMatch;
+            }
+
+            lowerPrime = upperPrime;
+        }
+
+        System.out.println("Gaps Thread " + threadId + ": " + bestMatch.elements());
+        System.out.println("ConP Thread " + threadId + ": " + bestMatch.getConsecutivePrimes());
     }
 
     /**
@@ -26,8 +61,18 @@ public class DecreasingGapService implements IGapService {
      *
      * @see Thread#run()
      */
-    @Override
     public void run() {
+        locatePrimeGaps(lowerIndex, upperIndex);
 
+        try {
+            cyclicBarrier.await();
+        } catch (InterruptedException | BrokenBarrierException exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getName() + " (id " + threadId + ")";
     }
 }

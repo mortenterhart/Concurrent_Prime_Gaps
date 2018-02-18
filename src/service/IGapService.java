@@ -1,5 +1,5 @@
 package service;
 
 public interface IGapService extends Runnable {
-    //void calculate();
+    void locatePrimeGaps(int fromIndex, int toIndex);
 }
