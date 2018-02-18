@@ -14,6 +14,10 @@ public enum PrimeStorage {
         return primeList;
     }
 
+    public boolean add(long prime) {
+        return primeList.add(prime);
+    }
+
     public boolean addAll(Collection<Long> primeSection) {
         return primeList.addAll(primeSection);
     }

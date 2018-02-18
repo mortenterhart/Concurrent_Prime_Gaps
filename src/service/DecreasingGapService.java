@@ -15,7 +15,13 @@ public class DecreasingGapService extends AbstractGapService implements IGapServ
 
     private CyclicBarrier cyclicBarrier;
 
-    public DecreasingGapService(CyclicBarrier cyclicBarrier, int fromIndex, int toIndex) {
+    public DecreasingGapService(CyclicBarrier cyclicBarrier) {
+        super();
+        this.cyclicBarrier = cyclicBarrier;
+    }
+
+    private DecreasingGapService(CyclicBarrier cyclicBarrier, int fromIndex, int toIndex) {
+        super();
         this.threadId = idCounter;
         this.cyclicBarrier = cyclicBarrier;
         this.lowerIndex = fromIndex;
@@ -52,6 +58,11 @@ public class DecreasingGapService extends AbstractGapService implements IGapServ
         } catch (InterruptedException | BrokenBarrierException exception) {
             exception.printStackTrace();
         }
+    }
+
+    @Override
+    public IGapService newInstance(int fromIndex, int toIndex) {
+        return new DecreasingGapService(cyclicBarrier, fromIndex, toIndex);
     }
 
     public int getLowerIndex() {

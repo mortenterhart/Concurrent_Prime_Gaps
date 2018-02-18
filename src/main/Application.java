@@ -1,9 +1,8 @@
 package main;
 
 import prime.PrimeCalculatorService;
-import service.DecreasingGapService;
-import service.DistinctGapService;
-import service.IncreasingGapService;;
+import service.*;
+;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +17,23 @@ public class Application {
         cyclicBarrier = new CyclicBarrier(Configuration.instance.maximumNumberOfThreads);
     }
 
-    public void execute() {
+    public void findGapChains() {
+        initializePrimeStorage();
+
+        int startIndex = 0;
+        int sectionRange = storage.size() / Configuration.instance.maximumNumberOfThreads;
+
+        System.out.println("Distinct gap matches:");
+        assignThreads(new DistinctGapService(cyclicBarrier), startIndex, sectionRange);
+
+        System.out.println("Decreasing gap matches:");
+        assignThreads(new DecreasingGapService(cyclicBarrier), startIndex, sectionRange);
+
+        System.out.println("Increasing gap matches:");
+        assignThreads(new IncreasingGapService(cyclicBarrier), startIndex, sectionRange);
+    }
+
+    private void initializePrimeStorage() {
         List<Thread> serviceThreads = new ArrayList<>();
 
         long startPrime = 3;
@@ -30,51 +45,23 @@ public class Application {
             primeThread.start();
             startPrime += partition;
         }
+        storage.add(2L);
 
         waitFor(serviceThreads);
         serviceThreads.clear();
         storage.sort();
+    }
 
-        int sectionRange = storage.size() / Configuration.instance.maximumNumberOfThreads;
+    private void assignThreads(AbstractGapService gapService, int startIndex, int segmentRange) {
+        List<Thread> serviceThreads = new ArrayList<>();
 
-        System.out.println("Distinct gap matches:");
-        int startIndex = 0;
         for (int i = 0; i < Configuration.instance.maximumNumberOfThreads; i++) {
-            Thread distinctGapThread = new Thread(new DistinctGapService(cyclicBarrier, startIndex,
-                    startIndex + sectionRange));
-            serviceThreads.add(distinctGapThread);
-            distinctGapThread.start();
-            startIndex += sectionRange;
+            Thread gapThread = new Thread(gapService.newInstance(startIndex, startIndex += segmentRange));
+            serviceThreads.add(gapThread);
+            gapThread.start();
         }
 
         waitFor(serviceThreads);
-        serviceThreads.clear();
-
-        System.out.println("Decreasing gap matches:");
-        startIndex = 0;
-        for (int i = 0; i < Configuration.instance.maximumNumberOfThreads; i++) {
-            Thread decreasingGapThread = new Thread(new DecreasingGapService(cyclicBarrier, startIndex,
-                    startIndex + sectionRange));
-            serviceThreads.add(decreasingGapThread);
-            decreasingGapThread.start();
-            startIndex += sectionRange;
-        }
-
-        waitFor(serviceThreads);
-        serviceThreads.clear();
-
-        System.out.println("Increasing gap matches:");
-        startIndex = 0;
-        for (int i = 0; i < Configuration.instance.maximumNumberOfThreads; i++) {
-            Thread decreasingGapThread = new Thread(new IncreasingGapService(cyclicBarrier, startIndex,
-                    startIndex + sectionRange));
-            serviceThreads.add(decreasingGapThread);
-            decreasingGapThread.start();
-            startIndex += sectionRange;
-        }
-
-        waitFor(serviceThreads);
-        serviceThreads.clear();
     }
 
     private void waitFor(List<Thread> threads) {
@@ -89,6 +76,6 @@ public class Application {
 
     public static void main(String[] args) {
         Application application = new Application();
-        application.execute();
+        application.findGapChains();
     }
 }

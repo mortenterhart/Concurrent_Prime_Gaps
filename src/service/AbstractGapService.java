@@ -10,9 +10,9 @@ import static prime.PrimeStorage.storage;
 public abstract class AbstractGapService {
     private IGapService serviceProvider;
 
-    public AbstractGapService() { }
+    protected AbstractGapService() { }
 
-    public void locatePrimeGaps(long minimum, long maximum) {
+    void locatePrimeGaps(long minimum, long maximum) {
         // In case there are gap chains with an equal length (save them all)
         List<PrimeGapChain> bestMatches = new ArrayList<>();
         PrimeGapChain bestMatch = new PrimeGapChain();
@@ -46,7 +46,9 @@ public abstract class AbstractGapService {
         }
     }
 
-    public void setServiceProvider(IGapService serviceProvider) {
+    protected void setServiceProvider(IGapService serviceProvider) {
         this.serviceProvider = serviceProvider;
     }
+
+    public abstract IGapService newInstance(int fromIndex, int toIndex);
 }

@@ -15,7 +15,13 @@ public class DistinctGapService extends AbstractGapService implements IGapServic
 
     private CyclicBarrier cyclicBarrier;
 
-    public DistinctGapService(CyclicBarrier cyclicBarrier, int fromIndex, int toIndex) {
+    public DistinctGapService(CyclicBarrier cyclicBarrier) {
+        super();
+        this.cyclicBarrier = cyclicBarrier;
+    }
+
+    private DistinctGapService(CyclicBarrier cyclicBarrier, int fromIndex, int toIndex) {
+        super();
         this.threadId = idCounter;
         this.cyclicBarrier = cyclicBarrier;
         this.lowerIndex = fromIndex;
@@ -52,6 +58,11 @@ public class DistinctGapService extends AbstractGapService implements IGapServic
         } catch (BrokenBarrierException | InterruptedException exception) {
             exception.printStackTrace();
         }
+    }
+
+    @Override
+    public IGapService newInstance(int fromIndex, int toIndex) {
+        return new DistinctGapService(cyclicBarrier, fromIndex, toIndex);
     }
 
     public int getLowerIndex() {

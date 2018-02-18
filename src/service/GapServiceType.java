@@ -1,5 +1,5 @@
 package service;
 
 public enum GapServiceType {
-    distinct, increasing, decreasing
+    distinct, increasing, decreasing;
 }
