@@ -1,6 +1,7 @@
 #!/bin/bash
 
-JAVA_VM_OPTIONS="-server -Xms6G -Xmx6G -XX:MaxDirectMemorySize=1024M -XX:NewSize=1G "\
+JAVA_HEAP_SIZE=6G
+JAVA_VM_OPTIONS="-server -Xms${JAVA_HEAP_SIZE} -Xmx${JAVA_HEAP_SIZE} -XX:MaxDirectMemorySize=1024M -XX:NewSize=1G "\
 "-XX:MaxNewSize=1G -XX:+UseParNewGC -XX:MaxTenuringThreshold=2 "\
 "-XX:SurvivorRatio=8 -XX:+UnlockDiagnosticVMOptions -XX:ParGCCardsPerStrideChunk=32768";
 
