@@ -1,4 +1,4 @@
-package prime;
+package storage;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -6,9 +6,10 @@ import java.util.Comparator;
 import java.util.List;
 
 public enum PrimeStorage {
-    storage;
+    primeStorage;
 
     private final List<Long> primeList = new ArrayList<>();
+
 
     public List<Long> primes() {
         return primeList;
@@ -36,6 +37,10 @@ public enum PrimeStorage {
 
     public void sort() {
         primeList.sort(Comparator.comparingLong(Long::longValue));
+    }
+
+    public void clear() {
+        primeList.clear();
     }
 
     public void dumpStorage() {

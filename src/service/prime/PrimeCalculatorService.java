@@ -1,20 +1,23 @@
-package prime;
+package service.prime;
+
+import logging.Logger;
+import storage.PrimeStorage;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
-public class PrimeCalculatorService implements Runnable {
+public class PrimeCalculatorService implements IPrimeService {
     private static int idCounter = 0;
 
     private int threadId = 0;
     private long minimum = 0;
     private long maximum = 0;
+
     private final CyclicBarrier cyclicBarrier;
 
-    public PrimeCalculatorService(CyclicBarrier barrier,
-                                  long minimum, long maximum) {
+    public PrimeCalculatorService(CyclicBarrier barrier, long minimum, long maximum) {
         this.threadId = idCounter;
         this.cyclicBarrier = barrier;
         this.minimum = minimum;
@@ -22,7 +25,7 @@ public class PrimeCalculatorService implements Runnable {
         idCounter++;
     }
 
-    private boolean isPrime(long number) {
+    public boolean isPrime(long number) {
         if (number % 2 == 0) {
             return false;
         }
@@ -36,7 +39,7 @@ public class PrimeCalculatorService implements Runnable {
         return true;
     }
 
-    private List<Long> calculatePrimes(long minimum, long maximum) {
+    public List<Long> calculatePrimes(long minimum, long maximum) {
         List<Long> primes = new ArrayList<>();
 
         // Iterate only over odd numbers (even numbers are no primes)
@@ -44,7 +47,6 @@ public class PrimeCalculatorService implements Runnable {
             minimum++;
         }
 
-        long start = System.currentTimeMillis();
         for (long number = minimum; number < maximum; number += 2) {
             if (isPrime(number)) {
                 primes.add(number);
@@ -70,9 +72,12 @@ public class PrimeCalculatorService implements Runnable {
      * @see Thread#run()
      */
     public void run() {
-        long start = System.currentTimeMillis();
-        PrimeStorage.storage.addAll(calculatePrimes(minimum, maximum));
-        System.out.println("Runtime (ms) (Thread " + threadId + "): " + (System.currentTimeMillis() - start));
+        long runtimeStart = System.currentTimeMillis();
+
+        PrimeStorage.primeStorage.addAll(calculatePrimes(minimum, maximum));
+
+        Logger.instance.log("  Runtime (ms) (Thread " + threadId + "): " + (System.currentTimeMillis() - runtimeStart));
+        Logger.instance.log("  > Thread " + threadId + " has died!");
 
         try {
             cyclicBarrier.await();
@@ -80,13 +85,5 @@ public class PrimeCalculatorService implements Runnable {
             System.err.println("Error: " + exception.getMessage());
             exception.printStackTrace();
         }
-    }
-
-    public long getMinimum() {
-        return minimum;
-    }
-
-    public long getMaximum() {
-        return maximum;
     }
 }

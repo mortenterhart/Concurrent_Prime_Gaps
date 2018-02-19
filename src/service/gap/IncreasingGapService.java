@@ -1,19 +1,21 @@
-package service;
+package service.gap;
 
 import model.PrimeGapChain;
 
-import java.util.concurrent.BrokenBarrierException;
+import java.util.List;
 import java.util.concurrent.CyclicBarrier;
 
 public class IncreasingGapService extends AbstractGapService implements IGapService {
     private static int idCounter = 0;
 
     private int threadId = 0;
+    private long runTime = 0;
+
+    private final CyclicBarrier cyclicBarrier;
+
     private GapServiceType serviceType = GapServiceType.increasing;
     private int lowerIndex = 0;
     private int upperIndex = 0;
-
-    private CyclicBarrier cyclicBarrier;
 
     public IncreasingGapService(CyclicBarrier cyclicBarrier) {
         super();
@@ -29,6 +31,7 @@ public class IncreasingGapService extends AbstractGapService implements IGapServ
         idCounter++;
 
         super.setServiceProvider(this);
+        super.setCyclicBarrier(cyclicBarrier);
     }
 
     public void locatePrimeGaps(int lowerIndex, int upperIndex) {
@@ -37,6 +40,15 @@ public class IncreasingGapService extends AbstractGapService implements IGapServ
 
     public boolean isNewChainMember(PrimeGapChain chain, long gap) {
         return chain.lastGapSmallerThan(gap);
+    }
+
+    public List<PrimeGapChain> fetchResults() {
+        return super.getResultChains();
+    }
+
+    @Override
+    public IGapService newInstance(int fromIndex, int toIndex) {
+        return new IncreasingGapService(cyclicBarrier, fromIndex, toIndex);
     }
 
     /**
@@ -51,31 +63,23 @@ public class IncreasingGapService extends AbstractGapService implements IGapServ
      * @see Thread#run()
      */
     public void run() {
-        locatePrimeGaps(lowerIndex, upperIndex);
-
-        try {
-            cyclicBarrier.await();
-        } catch (InterruptedException | BrokenBarrierException exception) {
-            exception.printStackTrace();
-        }
-
-    }
-
-    @Override
-    public IGapService newInstance(int fromIndex, int toIndex) {
-        return new IncreasingGapService(cyclicBarrier, fromIndex, toIndex);
-    }
-
-    public int getLowerIndex() {
-        return lowerIndex;
-    }
-
-    public int getUpperIndex() {
-        return upperIndex;
+        super.run(lowerIndex, upperIndex);
     }
 
     public GapServiceType getServiceType() {
         return serviceType;
+    }
+
+    public void setRunTime(long runTime) {
+        this.runTime = runTime;
+    }
+
+    public long getRunTime() {
+        return runTime;
+    }
+
+    public int getThreadId() {
+        return threadId;
     }
 
     @Override

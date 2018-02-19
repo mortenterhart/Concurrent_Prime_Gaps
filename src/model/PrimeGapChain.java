@@ -5,8 +5,11 @@ import java.util.List;
 
 public class PrimeGapChain {
     /**
-     * chainElements:   2   2   5    2
-     * primeNumbers:  3   5   7   11   13   (primeNumbers always has one element more than chainElements)
+     * Example of memory organization:
+     *
+     * chainElements:        2   2   5    2
+     * consecutivePrimes:  3   5   7   11   13
+     * (consecutivePrimes always has one element more than chainElements)
      */
     private List<Long> chainElements;
     private List<Long> consecutivePrimes;
