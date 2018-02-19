@@ -6,8 +6,7 @@ Task T11: **Distinct, Increasing, Decreasing Prime Gaps**
 ## Task Description
 Gap between consecutive primes is defined as
 
-
-g_i = p_{i + 1} - p_i
+`g_i = p_{i + 1} - p_i`
 
 All the gaps are even numbers.
 1. `n` **distinct** consecutive gaps
