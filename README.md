@@ -22,7 +22,7 @@ All the gaps are even numbers.
 
 Aufgabe: Parallelisiert sind für `n = [2..10]` Lösungen zu ermitteln.
 
-Screenshots von Visual VM befinden sich unter `vm-snapshots/`.
+[Screenshots von Visual VM](vm-snapshots) befinden sich unter `vm-snapshots/`.
 
 ## Zielsetzungen
 * Training der Kompetenz bezüglich der Implementierung von anspruchsvollen Algorithmen.
