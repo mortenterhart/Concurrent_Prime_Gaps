@@ -166,13 +166,13 @@ public class ServiceExecutor {
         logger.log("## Gap Chain Result Dump");
         logger.log(String.valueOf(primeStorage.size()) + " prime numbers were collected " +
                 "by the PrimeCalculatorService");
-        logger.log("Found gap chains for distinct type (sorted ascending by length):");
+        logger.log("Found " + gapStorage.numberOfDistinctChains() + " gap chains for distinct type (sorted ascending by length):");
         dumpChainType(gapStorage.getDistinctChains(), GapServiceType.distinct);
 
-        logger.log("Found gap chains for decreasing type (sorted ascending by length):");
+        logger.log("Found " + gapStorage.numberOfDecreasingChains() + " gap chains for decreasing type (sorted ascending by length):");
         dumpChainType(gapStorage.getDecreasingChains(), GapServiceType.decreasing);
 
-        logger.log("Found gap chains for increasing type (sorted ascending by length):");
+        logger.log("Found " + gapStorage.numberOfIncreasingChains() + " gap chains for increasing type (sorted ascending by length):");
         dumpChainType(gapStorage.getIncreasingChains(), GapServiceType.increasing);
 
         dumpRunTimes();
@@ -191,7 +191,7 @@ public class ServiceExecutor {
     }
 
     private void dumpRunTimes() {
-        logger.log("## Thread Runtimes");
+        logger.log("## Thread Runtime Dump");
         dumpRunTimeServiceType(distinctThreadRunTimes, GapServiceType.distinct);
         dumpRunTimeServiceType(decreasingThreadRunTimes, GapServiceType.decreasing);
         dumpRunTimeServiceType(increasingThreadRunTimes, GapServiceType.increasing);

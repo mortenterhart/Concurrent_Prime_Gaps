@@ -1,182 +1,182 @@
-[2018-02-19 02:32:42]: --- Number of available threads: 4
-[2018-02-19 02:32:42]: 
-[2018-02-19 02:32:42]: ## Initializing prime storage
-[2018-02-19 02:32:42]: > Starting thread 0 with a range from 3 to 125000002
-[2018-02-19 02:32:42]: > Starting thread 1 with a range from 125000002 to 250000001
-[2018-02-19 02:32:42]: > Starting thread 2 with a range from 250000001 to 375000000
-[2018-02-19 02:32:42]: > Starting thread 3 with a range from 375000000 to 499999999
-[2018-02-19 02:32:42]: Note: Adding 2 to the prime storage
-[2018-02-19 02:32:42]: 
-[2018-02-19 02:32:42]: ... waiting for threads to die
-[2018-02-19 02:43:31]:   Runtime (ms) (Thread 0): 648926
-[2018-02-19 02:43:31]:   > Thread 0 has died!
-[2018-02-19 02:49:24]:   Runtime (ms) (Thread 1): 1002062
-[2018-02-19 02:49:24]:   > Thread 1 has died!
-[2018-02-19 02:51:57]:   Runtime (ms) (Thread 2): 1155005
-[2018-02-19 02:51:57]:   > Thread 2 has died!
-[2018-02-19 02:53:56]:   Runtime (ms) (Thread 3): 1274053
-[2018-02-19 02:53:56]:   > Thread 3 has died!
-[2018-02-19 02:53:57]: 
-[2018-02-19 02:53:57]: ## Assigning threads to gap service tasks
-[2018-02-19 02:53:57]: > Starting thread 0 for task 'Distinct Prime Gaps' for range (0, 6588966) in prime storage
-[2018-02-19 02:53:57]:   Total number of primes: 26355867
-[2018-02-19 02:53:57]: > Starting thread 1 for task 'Distinct Prime Gaps' for range (6588966, 13177932) in prime storage
-[2018-02-19 02:53:57]:   Total number of primes: 26355867
-[2018-02-19 02:53:57]: > Starting thread 2 for task 'Distinct Prime Gaps' for range (13177932, 19766898) in prime storage
-[2018-02-19 02:53:57]:   Total number of primes: 26355867
-[2018-02-19 02:53:57]: > Starting thread 3 for task 'Distinct Prime Gaps' for range (19766898, 26355864) in prime storage
-[2018-02-19 02:53:57]:   Total number of primes: 26355867
-[2018-02-19 02:53:57]: 
-[2018-02-19 02:53:57]: ... waiting for threads to die
-[2018-02-19 02:53:58]:   Runtime (ms) (Distinct Thread 1): 1379
-[2018-02-19 02:53:58]:   > Thread 1 has died!
-[2018-02-19 02:53:58]:   Runtime (ms) (Distinct Thread 3): 1370
-[2018-02-19 02:53:58]:   > Thread 3 has died!
-[2018-02-19 02:53:58]:   Runtime (ms) (Distinct Thread 0): 1384
-[2018-02-19 02:53:58]:   > Thread 0 has died!
-[2018-02-19 02:53:58]:   Runtime (ms) (Distinct Thread 2): 1391
-[2018-02-19 02:53:58]:   > Thread 2 has died!
-[2018-02-19 02:53:58]: 
-[2018-02-19 02:53:58]: > Starting thread 0 for task 'Decreasing Prime Gaps' for range (0, 6588966) in prime storage
-[2018-02-19 02:53:58]:   Total number of primes: 26355867
-[2018-02-19 02:53:58]: > Starting thread 1 for task 'Decreasing Prime Gaps' for range (6588966, 13177932) in prime storage
-[2018-02-19 02:53:58]:   Total number of primes: 26355867
-[2018-02-19 02:53:58]: > Starting thread 2 for task 'Decreasing Prime Gaps' for range (13177932, 19766898) in prime storage
-[2018-02-19 02:53:58]:   Total number of primes: 26355867
-[2018-02-19 02:53:58]: > Starting thread 3 for task 'Decreasing Prime Gaps' for range (19766898, 26355864) in prime storage
-[2018-02-19 02:53:58]:   Total number of primes: 26355867
-[2018-02-19 02:53:58]: 
-[2018-02-19 02:53:58]: ... waiting for threads to die
-[2018-02-19 02:53:59]:   Runtime (ms) (Decreasing Thread 0): 706
-[2018-02-19 02:53:59]:   > Thread 0 has died!
-[2018-02-19 02:53:59]:   Runtime (ms) (Decreasing Thread 3): 713
-[2018-02-19 02:53:59]:   > Thread 3 has died!
-[2018-02-19 02:53:59]:   Runtime (ms) (Decreasing Thread 2): 720
-[2018-02-19 02:53:59]:   > Thread 2 has died!
-[2018-02-19 02:53:59]:   Runtime (ms) (Decreasing Thread 1): 727
-[2018-02-19 02:53:59]:   > Thread 1 has died!
-[2018-02-19 02:53:59]: 
-[2018-02-19 02:53:59]: > Starting thread 0 for task 'Increasing Prime Gaps' for range (0, 6588966) in prime storage
-[2018-02-19 02:53:59]:   Total number of primes: 26355867
-[2018-02-19 02:53:59]: > Starting thread 1 for task 'Increasing Prime Gaps' for range (6588966, 13177932) in prime storage
-[2018-02-19 02:53:59]:   Total number of primes: 26355867
-[2018-02-19 02:53:59]: > Starting thread 2 for task 'Increasing Prime Gaps' for range (13177932, 19766898) in prime storage
-[2018-02-19 02:53:59]:   Total number of primes: 26355867
-[2018-02-19 02:53:59]: > Starting thread 3 for task 'Increasing Prime Gaps' for range (19766898, 26355864) in prime storage
-[2018-02-19 02:53:59]:   Total number of primes: 26355867
-[2018-02-19 02:53:59]: 
-[2018-02-19 02:53:59]: ... waiting for threads to die
-[2018-02-19 02:54:00]:   Runtime (ms) (Increasing Thread 3): 601
-[2018-02-19 02:54:00]:   > Thread 3 has died!
-[2018-02-19 02:54:00]:   Runtime (ms) (Increasing Thread 0): 619
-[2018-02-19 02:54:00]:   > Thread 0 has died!
-[2018-02-19 02:54:00]:   Runtime (ms) (Increasing Thread 2): 619
-[2018-02-19 02:54:00]:   > Thread 2 has died!
-[2018-02-19 02:54:00]:   Runtime (ms) (Increasing Thread 1): 622
-[2018-02-19 02:54:00]:   > Thread 1 has died!
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]: ## Gap Chain Result Dump
-[2018-02-19 02:54:00]: 26355867 prime numbers were collected by the PrimeCalculatorService
-[2018-02-19 02:54:00]: Found gap chains for distinct type (sorted ascending by length):
-[2018-02-19 02:54:00]:   Distinct Chains (Number 1):
-[2018-02-19 02:54:00]:     Chain Length:       20
-[2018-02-19 02:54:00]:     Gap Elements:       [40, 8, 18, 42, 4, 26, 12, 10, 20, 28, 30, 14, 64, 32, 24, 6, 22, 2, 46, 38]
-[2018-02-19 02:54:00]:     Consecutive Primes: [60520171, 60520211, 60520219, 60520237, 60520279, 60520283, 60520309, 60520321, 60520331, 60520351, 60520379, 60520409, 60520423, 60520487, 60520519, 60520543, 60520549, 60520571, 60520573, 60520619, 60520657]
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:   Distinct Chains (Number 2):
-[2018-02-19 02:54:00]:     Chain Length:       21
-[2018-02-19 02:54:00]:     Gap Elements:       [22, 24, 68, 40, 42, 60, 6, 20, 70, 8, 52, 2, 12, 4, 26, 10, 44, 16, 38, 48, 18]
-[2018-02-19 02:54:00]:     Consecutive Primes: [231143467, 231143489, 231143513, 231143581, 231143621, 231143663, 231143723, 231143729, 231143749, 231143819, 231143827, 231143879, 231143881, 231143893, 231143897, 231143923, 231143933, 231143977, 231143993, 231144031, 231144079, 231144097]
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]: Found gap chains for decreasing type (sorted ascending by length):
-[2018-02-19 02:54:00]:   Decreasing Chains (Number 1):
-[2018-02-19 02:54:00]:     Chain Length:       10
-[2018-02-19 02:54:00]:     Gap Elements:       [54, 30, 22, 20, 18, 18, 10, 8, 6, 4]
-[2018-02-19 02:54:00]:     Consecutive Primes: [208654657, 208654711, 208654741, 208654763, 208654783, 208654801, 208654819, 208654829, 208654837, 208654843, 208654847]
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:   Decreasing Chains (Number 2):
-[2018-02-19 02:54:00]:     Chain Length:       10
-[2018-02-19 02:54:00]:     Gap Elements:       [20, 18, 16, 14, 12, 10, 8, 6, 4, 2]
-[2018-02-19 02:54:00]:     Consecutive Primes: [245333213, 245333233, 245333251, 245333267, 245333281, 245333293, 245333303, 245333311, 245333317, 245333321, 245333323]
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:   Decreasing Chains (Number 3):
-[2018-02-19 02:54:00]:     Chain Length:       10
-[2018-02-19 02:54:00]:     Gap Elements:       [20, 18, 16, 14, 12, 10, 8, 6, 4, 2]
-[2018-02-19 02:54:00]:     Consecutive Primes: [245333213, 245333233, 245333251, 245333267, 245333281, 245333293, 245333303, 245333311, 245333317, 245333321, 245333323]
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:   Decreasing Chains (Number 4):
-[2018-02-19 02:54:00]:     Chain Length:       10
-[2018-02-19 02:54:00]:     Gap Elements:       [28, 24, 20, 18, 16, 12, 8, 6, 6, 4]
-[2018-02-19 02:54:00]:     Consecutive Primes: [283854721, 283854749, 283854773, 283854793, 283854811, 283854827, 283854839, 283854847, 283854853, 283854859, 283854863]
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:   Decreasing Chains (Number 5):
-[2018-02-19 02:54:00]:     Chain Length:       10
-[2018-02-19 02:54:00]:     Gap Elements:       [40, 20, 18, 18, 12, 12, 10, 6, 6, 6]
-[2018-02-19 02:54:00]:     Consecutive Primes: [283869811, 283869851, 283869871, 283869889, 283869907, 283869919, 283869931, 283869941, 283869947, 283869953, 283869959]
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:   Decreasing Chains (Number 6):
-[2018-02-19 02:54:00]:     Chain Length:       10
-[2018-02-19 02:54:00]:     Gap Elements:       [76, 54, 50, 40, 36, 18, 14, 10, 6, 2]
-[2018-02-19 02:54:00]:     Consecutive Primes: [397597093, 397597169, 397597223, 397597273, 397597313, 397597349, 397597367, 397597381, 397597391, 397597397, 397597399]
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]: Found gap chains for increasing type (sorted ascending by length):
-[2018-02-19 02:54:00]:   Increasing Chains (Number 1):
-[2018-02-19 02:54:00]:     Chain Length:       10
-[2018-02-19 02:54:00]:     Gap Elements:       [12, 12, 14, 16, 20, 24, 24, 28, 42, 60]
-[2018-02-19 02:54:00]:     Consecutive Primes: [255030539, 255030551, 255030563, 255030577, 255030593, 255030613, 255030637, 255030661, 255030689, 255030731, 255030791]
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:   Increasing Chains (Number 2):
-[2018-02-19 02:54:00]:     Chain Length:       10
-[2018-02-19 02:54:00]:     Gap Elements:       [2, 4, 6, 8, 10, 12, 24, 26, 28, 56]
-[2018-02-19 02:54:00]:     Consecutive Primes: [268622567, 268622569, 268622573, 268622579, 268622587, 268622597, 268622609, 268622633, 268622659, 268622687, 268622743]
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:   Increasing Chains (Number 3):
-[2018-02-19 02:54:00]:     Chain Length:       10
-[2018-02-19 02:54:00]:     Gap Elements:       [8, 10, 12, 14, 16, 20, 24, 30, 30, 48]
-[2018-02-19 02:54:00]:     Consecutive Primes: [316183919, 316183927, 316183937, 316183949, 316183963, 316183979, 316183999, 316184023, 316184053, 316184083, 316184131]
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:   Increasing Chains (Number 4):
-[2018-02-19 02:54:00]:     Chain Length:       10
-[2018-02-19 02:54:00]:     Gap Elements:       [8, 10, 12, 14, 16, 18, 18, 18, 24, 30]
-[2018-02-19 02:54:00]:     Consecutive Primes: [499258043, 499258051, 499258061, 499258073, 499258087, 499258103, 499258121, 499258139, 499258157, 499258181, 499258211]
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]: ## Thread Runtimes
-[2018-02-19 02:54:00]:  > Distinct Prime Gaps:
-[2018-02-19 02:54:00]:     Thread:       0
-[2018-02-19 02:54:00]:     Runtime (ms): 1384
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:     Thread:       1
-[2018-02-19 02:54:00]:     Runtime (ms): 1379
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:     Thread:       2
-[2018-02-19 02:54:00]:     Runtime (ms): 1391
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:     Thread:       3
-[2018-02-19 02:54:00]:     Runtime (ms): 1370
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:  > Decreasing Prime Gaps:
-[2018-02-19 02:54:00]:     Thread:       0
-[2018-02-19 02:54:00]:     Runtime (ms): 706
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:     Thread:       1
-[2018-02-19 02:54:00]:     Runtime (ms): 727
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:     Thread:       2
-[2018-02-19 02:54:00]:     Runtime (ms): 720
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:     Thread:       3
-[2018-02-19 02:54:00]:     Runtime (ms): 713
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:  > Increasing Prime Gaps:
-[2018-02-19 02:54:00]:     Thread:       0
-[2018-02-19 02:54:00]:     Runtime (ms): 619
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:     Thread:       1
-[2018-02-19 02:54:00]:     Runtime (ms): 622
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:     Thread:       2
-[2018-02-19 02:54:00]:     Runtime (ms): 619
-[2018-02-19 02:54:00]: 
-[2018-02-19 02:54:00]:     Thread:       3
-[2018-02-19 02:54:00]:     Runtime (ms): 601
-[2018-02-19 02:54:00]: 
+[2018-02-19 03:17:44]: --- Number of available threads: 4
+[2018-02-19 03:17:44]: 
+[2018-02-19 03:17:44]: ## Initializing prime storage
+[2018-02-19 03:17:44]: > Starting thread 0 with a range from 3 to 125000002
+[2018-02-19 03:17:44]: > Starting thread 1 with a range from 125000002 to 250000001
+[2018-02-19 03:17:44]: > Starting thread 2 with a range from 250000001 to 375000000
+[2018-02-19 03:17:44]: > Starting thread 3 with a range from 375000000 to 499999999
+[2018-02-19 03:17:44]: Note: Adding 2 to the prime storage
+[2018-02-19 03:17:44]: 
+[2018-02-19 03:17:44]: ... waiting for threads to die
+[2018-02-19 03:28:52]:   Runtime (ms) (Thread 0): 668047
+[2018-02-19 03:28:52]:   > Thread 0 has died!
+[2018-02-19 03:35:38]:   Runtime (ms) (Thread 1): 1073805
+[2018-02-19 03:35:38]:   > Thread 1 has died!
+[2018-02-19 03:38:51]:   Runtime (ms) (Thread 2): 1266644
+[2018-02-19 03:38:51]:   > Thread 2 has died!
+[2018-02-19 03:40:47]:   Runtime (ms) (Thread 3): 1382741
+[2018-02-19 03:40:47]:   > Thread 3 has died!
+[2018-02-19 03:40:48]: 
+[2018-02-19 03:40:48]: ## Assigning threads to gap service tasks
+[2018-02-19 03:40:48]: > Starting thread 0 for task 'Distinct Prime Gaps' for range (0, 6588966) in prime storage
+[2018-02-19 03:40:48]:   Total number of primes: 26355867
+[2018-02-19 03:40:48]: > Starting thread 1 for task 'Distinct Prime Gaps' for range (6588966, 13177932) in prime storage
+[2018-02-19 03:40:48]:   Total number of primes: 26355867
+[2018-02-19 03:40:48]: > Starting thread 2 for task 'Distinct Prime Gaps' for range (13177932, 19766898) in prime storage
+[2018-02-19 03:40:48]:   Total number of primes: 26355867
+[2018-02-19 03:40:48]: > Starting thread 3 for task 'Distinct Prime Gaps' for range (19766898, 26355864) in prime storage
+[2018-02-19 03:40:48]:   Total number of primes: 26355867
+[2018-02-19 03:40:48]: 
+[2018-02-19 03:40:48]: ... waiting for threads to die
+[2018-02-19 03:40:51]:   Runtime (ms) (Distinct Thread 3): 2597
+[2018-02-19 03:40:51]:   > Thread 3 has died!
+[2018-02-19 03:40:51]:   Runtime (ms) (Distinct Thread 1): 2651
+[2018-02-19 03:40:51]:   > Thread 1 has died!
+[2018-02-19 03:40:51]:   Runtime (ms) (Distinct Thread 2): 2666
+[2018-02-19 03:40:51]:   > Thread 2 has died!
+[2018-02-19 03:40:51]:   Runtime (ms) (Distinct Thread 0): 2675
+[2018-02-19 03:40:51]:   > Thread 0 has died!
+[2018-02-19 03:40:51]: 
+[2018-02-19 03:40:51]: > Starting thread 0 for task 'Decreasing Prime Gaps' for range (0, 6588966) in prime storage
+[2018-02-19 03:40:51]:   Total number of primes: 26355867
+[2018-02-19 03:40:51]: > Starting thread 1 for task 'Decreasing Prime Gaps' for range (6588966, 13177932) in prime storage
+[2018-02-19 03:40:51]:   Total number of primes: 26355867
+[2018-02-19 03:40:51]: > Starting thread 2 for task 'Decreasing Prime Gaps' for range (13177932, 19766898) in prime storage
+[2018-02-19 03:40:51]:   Total number of primes: 26355867
+[2018-02-19 03:40:51]: > Starting thread 3 for task 'Decreasing Prime Gaps' for range (19766898, 26355864) in prime storage
+[2018-02-19 03:40:51]:   Total number of primes: 26355867
+[2018-02-19 03:40:51]: 
+[2018-02-19 03:40:51]: ... waiting for threads to die
+[2018-02-19 03:40:51]:   Runtime (ms) (Decreasing Thread 2): 564
+[2018-02-19 03:40:51]:   > Thread 2 has died!
+[2018-02-19 03:40:51]:   Runtime (ms) (Decreasing Thread 1): 568
+[2018-02-19 03:40:51]:   > Thread 1 has died!
+[2018-02-19 03:40:51]:   Runtime (ms) (Decreasing Thread 0): 576
+[2018-02-19 03:40:51]:   > Thread 0 has died!
+[2018-02-19 03:40:51]:   Runtime (ms) (Decreasing Thread 3): 559
+[2018-02-19 03:40:51]:   > Thread 3 has died!
+[2018-02-19 03:40:51]: 
+[2018-02-19 03:40:51]: > Starting thread 0 for task 'Increasing Prime Gaps' for range (0, 6588966) in prime storage
+[2018-02-19 03:40:51]:   Total number of primes: 26355867
+[2018-02-19 03:40:51]: > Starting thread 1 for task 'Increasing Prime Gaps' for range (6588966, 13177932) in prime storage
+[2018-02-19 03:40:51]:   Total number of primes: 26355867
+[2018-02-19 03:40:51]: > Starting thread 2 for task 'Increasing Prime Gaps' for range (13177932, 19766898) in prime storage
+[2018-02-19 03:40:51]:   Total number of primes: 26355867
+[2018-02-19 03:40:51]: > Starting thread 3 for task 'Increasing Prime Gaps' for range (19766898, 26355864) in prime storage
+[2018-02-19 03:40:51]:   Total number of primes: 26355867
+[2018-02-19 03:40:51]: 
+[2018-02-19 03:40:51]: ... waiting for threads to die
+[2018-02-19 03:40:52]:   Runtime (ms) (Increasing Thread 3): 641
+[2018-02-19 03:40:52]:   > Thread 3 has died!
+[2018-02-19 03:40:52]:   Runtime (ms) (Increasing Thread 0): 645
+[2018-02-19 03:40:52]:   > Thread 0 has died!
+[2018-02-19 03:40:52]:   Runtime (ms) (Increasing Thread 1): 653
+[2018-02-19 03:40:52]:   > Thread 1 has died!
+[2018-02-19 03:40:52]:   Runtime (ms) (Increasing Thread 2): 659
+[2018-02-19 03:40:52]:   > Thread 2 has died!
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]: ## Gap Chain Result Dump
+[2018-02-19 03:40:52]: 26355867 prime numbers were collected by the PrimeCalculatorService
+[2018-02-19 03:40:52]: Found gap chains for distinct type (sorted ascending by length):
+[2018-02-19 03:40:52]:   Distinct Chains (Number 1):
+[2018-02-19 03:40:52]:     Chain Length:       20
+[2018-02-19 03:40:52]:     Gap Elements:       [40, 8, 18, 42, 4, 26, 12, 10, 20, 28, 30, 14, 64, 32, 24, 6, 22, 2, 46, 38]
+[2018-02-19 03:40:52]:     Consecutive Primes: [60520171, 60520211, 60520219, 60520237, 60520279, 60520283, 60520309, 60520321, 60520331, 60520351, 60520379, 60520409, 60520423, 60520487, 60520519, 60520543, 60520549, 60520571, 60520573, 60520619, 60520657]
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:   Distinct Chains (Number 2):
+[2018-02-19 03:40:52]:     Chain Length:       21
+[2018-02-19 03:40:52]:     Gap Elements:       [22, 24, 68, 40, 42, 60, 6, 20, 70, 8, 52, 2, 12, 4, 26, 10, 44, 16, 38, 48, 18]
+[2018-02-19 03:40:52]:     Consecutive Primes: [231143467, 231143489, 231143513, 231143581, 231143621, 231143663, 231143723, 231143729, 231143749, 231143819, 231143827, 231143879, 231143881, 231143893, 231143897, 231143923, 231143933, 231143977, 231143993, 231144031, 231144079, 231144097]
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]: Found gap chains for decreasing type (sorted ascending by length):
+[2018-02-19 03:40:52]:   Decreasing Chains (Number 1):
+[2018-02-19 03:40:52]:     Chain Length:       10
+[2018-02-19 03:40:52]:     Gap Elements:       [54, 30, 22, 20, 18, 18, 10, 8, 6, 4]
+[2018-02-19 03:40:52]:     Consecutive Primes: [208654657, 208654711, 208654741, 208654763, 208654783, 208654801, 208654819, 208654829, 208654837, 208654843, 208654847]
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:   Decreasing Chains (Number 2):
+[2018-02-19 03:40:52]:     Chain Length:       10
+[2018-02-19 03:40:52]:     Gap Elements:       [20, 18, 16, 14, 12, 10, 8, 6, 4, 2]
+[2018-02-19 03:40:52]:     Consecutive Primes: [245333213, 245333233, 245333251, 245333267, 245333281, 245333293, 245333303, 245333311, 245333317, 245333321, 245333323]
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:   Decreasing Chains (Number 3):
+[2018-02-19 03:40:52]:     Chain Length:       10
+[2018-02-19 03:40:52]:     Gap Elements:       [20, 18, 16, 14, 12, 10, 8, 6, 4, 2]
+[2018-02-19 03:40:52]:     Consecutive Primes: [245333213, 245333233, 245333251, 245333267, 245333281, 245333293, 245333303, 245333311, 245333317, 245333321, 245333323]
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:   Decreasing Chains (Number 4):
+[2018-02-19 03:40:52]:     Chain Length:       10
+[2018-02-19 03:40:52]:     Gap Elements:       [28, 24, 20, 18, 16, 12, 8, 6, 6, 4]
+[2018-02-19 03:40:52]:     Consecutive Primes: [283854721, 283854749, 283854773, 283854793, 283854811, 283854827, 283854839, 283854847, 283854853, 283854859, 283854863]
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:   Decreasing Chains (Number 5):
+[2018-02-19 03:40:52]:     Chain Length:       10
+[2018-02-19 03:40:52]:     Gap Elements:       [40, 20, 18, 18, 12, 12, 10, 6, 6, 6]
+[2018-02-19 03:40:52]:     Consecutive Primes: [283869811, 283869851, 283869871, 283869889, 283869907, 283869919, 283869931, 283869941, 283869947, 283869953, 283869959]
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:   Decreasing Chains (Number 6):
+[2018-02-19 03:40:52]:     Chain Length:       10
+[2018-02-19 03:40:52]:     Gap Elements:       [76, 54, 50, 40, 36, 18, 14, 10, 6, 2]
+[2018-02-19 03:40:52]:     Consecutive Primes: [397597093, 397597169, 397597223, 397597273, 397597313, 397597349, 397597367, 397597381, 397597391, 397597397, 397597399]
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]: Found gap chains for increasing type (sorted ascending by length):
+[2018-02-19 03:40:52]:   Increasing Chains (Number 1):
+[2018-02-19 03:40:52]:     Chain Length:       10
+[2018-02-19 03:40:52]:     Gap Elements:       [12, 12, 14, 16, 20, 24, 24, 28, 42, 60]
+[2018-02-19 03:40:52]:     Consecutive Primes: [255030539, 255030551, 255030563, 255030577, 255030593, 255030613, 255030637, 255030661, 255030689, 255030731, 255030791]
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:   Increasing Chains (Number 2):
+[2018-02-19 03:40:52]:     Chain Length:       10
+[2018-02-19 03:40:52]:     Gap Elements:       [2, 4, 6, 8, 10, 12, 24, 26, 28, 56]
+[2018-02-19 03:40:52]:     Consecutive Primes: [268622567, 268622569, 268622573, 268622579, 268622587, 268622597, 268622609, 268622633, 268622659, 268622687, 268622743]
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:   Increasing Chains (Number 3):
+[2018-02-19 03:40:52]:     Chain Length:       10
+[2018-02-19 03:40:52]:     Gap Elements:       [8, 10, 12, 14, 16, 20, 24, 30, 30, 48]
+[2018-02-19 03:40:52]:     Consecutive Primes: [316183919, 316183927, 316183937, 316183949, 316183963, 316183979, 316183999, 316184023, 316184053, 316184083, 316184131]
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:   Increasing Chains (Number 4):
+[2018-02-19 03:40:52]:     Chain Length:       10
+[2018-02-19 03:40:52]:     Gap Elements:       [8, 10, 12, 14, 16, 18, 18, 18, 24, 30]
+[2018-02-19 03:40:52]:     Consecutive Primes: [499258043, 499258051, 499258061, 499258073, 499258087, 499258103, 499258121, 499258139, 499258157, 499258181, 499258211]
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]: ## Thread Runtimes
+[2018-02-19 03:40:52]:  > Distinct Prime Gaps:
+[2018-02-19 03:40:52]:     Thread:       0
+[2018-02-19 03:40:52]:     Runtime (ms): 2675
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:     Thread:       1
+[2018-02-19 03:40:52]:     Runtime (ms): 2651
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:     Thread:       2
+[2018-02-19 03:40:52]:     Runtime (ms): 2666
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:     Thread:       3
+[2018-02-19 03:40:52]:     Runtime (ms): 2597
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:  > Decreasing Prime Gaps:
+[2018-02-19 03:40:52]:     Thread:       0
+[2018-02-19 03:40:52]:     Runtime (ms): 576
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:     Thread:       1
+[2018-02-19 03:40:52]:     Runtime (ms): 568
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:     Thread:       2
+[2018-02-19 03:40:52]:     Runtime (ms): 564
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:     Thread:       3
+[2018-02-19 03:40:52]:     Runtime (ms): 559
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:  > Increasing Prime Gaps:
+[2018-02-19 03:40:52]:     Thread:       0
+[2018-02-19 03:40:52]:     Runtime (ms): 645
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:     Thread:       1
+[2018-02-19 03:40:52]:     Runtime (ms): 653
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:     Thread:       2
+[2018-02-19 03:40:52]:     Runtime (ms): 659
+[2018-02-19 03:40:52]: 
+[2018-02-19 03:40:52]:     Thread:       3
+[2018-02-19 03:40:52]:     Runtime (ms): 640
+[2018-02-19 03:40:52]: 

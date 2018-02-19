@@ -47,6 +47,18 @@ public enum GapChainStorage {
         chains.sort(Comparator.comparingInt(PrimeGapChain::length));
     }
 
+    public int numberOfDistinctChains() {
+        return distinctChains.size();
+    }
+
+    public int numberOfDecreasingChains() {
+        return decreasingChains.size();
+    }
+
+    public int numberOfIncreasingChains() {
+        return increasingChains.size();
+    }
+
     public List<PrimeGapChain> getDistinctChains() {
         return distinctChains;
     }
