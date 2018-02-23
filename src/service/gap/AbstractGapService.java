@@ -51,12 +51,13 @@ public abstract class AbstractGapService implements Runnable {
             if (serviceProvider.isNewChainMember(currentMatch, gap)) {
                 currentMatch.add(lowerPrime, gap, upperPrime);
             } else {
-                currentMatch = new PrimeGapChain();
+                currentMatch.clear();
             }
 
             if (currentMatch.isLongerThan(bestMatch)) {
                 bestMatch = currentMatch;
                 bestMatches.clear();
+                bestMatches.add(currentMatch);
             } else if (currentMatch.hasEqualLengthAs(bestMatch)) {
                 bestMatches.add(currentMatch);
             }

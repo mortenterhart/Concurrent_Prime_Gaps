@@ -2,10 +2,13 @@ package main;
 
 import logging.Logger;
 import model.PrimeGapChain;
-import service.prime.PrimeCalculatorService;
 import service.gap.*;
+import service.prime.PrimeCalculatorService;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CyclicBarrier;
 
 import static storage.GapChainStorage.gapStorage;
