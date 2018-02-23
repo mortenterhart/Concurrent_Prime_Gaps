@@ -142,13 +142,13 @@ public class ServiceExecutor {
 
         switch (service.getServiceType()) {
             case distinct:
-                distinctThreadRunTimes.put(service.getThreadId(), service.getRunTime());
+                distinctThreadRunTimes.put(service.getThreadId(), service.getRuntime());
                 break;
             case decreasing:
-                decreasingThreadRunTimes.put(service.getThreadId(), service.getRunTime());
+                decreasingThreadRunTimes.put(service.getThreadId(), service.getRuntime());
                 break;
             case increasing:
-                increasingThreadRunTimes.put(service.getThreadId(), service.getRunTime());
+                increasingThreadRunTimes.put(service.getThreadId(), service.getRuntime());
                 break;
         }
     }

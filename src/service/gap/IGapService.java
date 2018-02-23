@@ -10,9 +10,9 @@ public interface IGapService extends Runnable {
 
     GapServiceType getServiceType();
 
-    void setRunTime(long runTime);
+    void setRuntime(long runTime);
 
-    long getRunTime();
+    long getRuntime();
 
     int getThreadId();
 

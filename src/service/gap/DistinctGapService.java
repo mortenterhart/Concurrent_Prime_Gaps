@@ -9,7 +9,7 @@ public class DistinctGapService extends AbstractGapService implements IGapServic
     private static int idCounter = 0;
 
     private int threadId = 0;
-    private long runTime = 0;
+    private long runtime = 0;
 
     private final CyclicBarrier cyclicBarrier;
 
@@ -71,12 +71,12 @@ public class DistinctGapService extends AbstractGapService implements IGapServic
         return serviceType;
     }
 
-    public long getRunTime() {
-        return runTime;
+    public long getRuntime() {
+        return runtime;
     }
 
-    public void setRunTime(long runTime) {
-        this.runTime = runTime;
+    public void setRuntime(long runTime) {
+        this.runtime = runTime;
     }
 
     public int getThreadId() {

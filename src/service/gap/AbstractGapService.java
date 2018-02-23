@@ -71,11 +71,11 @@ public abstract class AbstractGapService implements Runnable {
     protected void run(int lowerIndex, int upperIndex) {
         long runtimeStart = System.currentTimeMillis();
         locatePrimeGaps(lowerIndex, upperIndex);
-        serviceProvider.setRunTime(System.currentTimeMillis() - runtimeStart);
+        long threadRuntime = System.currentTimeMillis() - runtimeStart;
+        serviceProvider.setRuntime(threadRuntime);
 
         Logger.instance.log("  Runtime (ms) (" + serviceProvider.getServiceType().capitalizeName() +
-                " Thread " + serviceProvider.getThreadId() + "): " +
-                (System.currentTimeMillis() - runtimeStart));
+                " Thread " + serviceProvider.getThreadId() + "): " + threadRuntime);
         Logger.instance.log("  > Thread " + serviceProvider.getThreadId() + " has died!");
 
         try {
